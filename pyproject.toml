@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "connections-2-secrets"
+version = "0.1.0"
+description = ""
+authors = ["morooshka <alexander.grigorev@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pyyaml = "^6.0.1"
+jinja2 = "^3.1.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

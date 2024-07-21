@@ -1,0 +1,16 @@
+---
+# Airflow connections secret
+# Apply this manifest before updating Airflow Helm Chart
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: connections-secret
+  namespace: {{ namespace }}
+data:
+{%- for connection in connections %}
+  # {{ connection["env_name"] }}
+  # noinspection SpellCheckingInspection
+  {{ connection["name"] }}: {{ connection["data"] }}
+{%- endfor %}
+

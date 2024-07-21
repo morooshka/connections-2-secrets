@@ -1,0 +1,12 @@
+---
+# Airflow Helm Chart append file
+# Append this file to .Values.secret section and update the Chart
+
+secret:
+{%- for connection in connections %}
+  # Connection "{{ connection["name"] }}"
+  - envName: "{{ connection["env_name"] }}"
+    secretName: "connections-secret"
+    secretKey: "{{ connection["name"] }}"
+{%- endfor %}
+
